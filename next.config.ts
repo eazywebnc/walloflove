@@ -32,24 +32,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
   poweredByHeader: false,
-  async redirects() {
-    return [
-      {
-        source: "/auth/signup",
-        destination: "/auth/login",
-        permanent: true,
-      },
-    ];
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ];
-  },
 };
 
 export default nextConfig;
