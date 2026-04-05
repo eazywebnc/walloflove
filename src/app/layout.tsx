@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "WallOfLove — Collect & Display Testimonials That Convert",
   description:
-    "Collect, manage, and showcase stunning customer testimonials. Embed a beautiful wall of love on your site in one line of code. Turn happy customers into your best marketing.",
+    "Collect and showcase stunning customer testimonials. Embed a beautiful wall of love on your site in one line of code. Free to start.",
   keywords: [
     "testimonials",
     "social proof",
