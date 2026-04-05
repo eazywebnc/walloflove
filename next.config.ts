@@ -32,7 +32,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  output: 'export',
   images: { unoptimized: true },
   poweredByHeader: false,
 };
