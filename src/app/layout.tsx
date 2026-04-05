@@ -25,8 +25,14 @@ export const metadata: Metadata = {
     "testimonial widget",
     "testimonials widget free",
     "social proof widget",
+    "social proof wall",
+    "collect testimonials",
     "customer review embed",
+    "testimonial collection tool",
+    "embed reviews on website",
   ],
+  authors: [{ name: "EazyWebNC", url: "https://eazyweb.nc" }],
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   metadataBase: new URL("https://walloflove.eazyweb.nc"),
   alternates: {
     canonical: "/",
@@ -53,13 +59,32 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      name: "WallOfLove",
+      url: "https://walloflove.eazyweb.nc",
+      publisher: {
+        "@type": "Organization",
+        name: "EazyWebNC",
+        url: "https://eazyweb.nc",
+        logo: { "@type": "ImageObject", url: "https://eazyweb.nc/logo.png" },
+        sameAs: [
+          "https://www.facebook.com/eazywebnc",
+          "https://www.linkedin.com/company/eazywebnc",
+          "https://x.com/eazywebnc",
+        ],
+      },
+    },
+    {
       "@type": "SoftwareApplication",
       name: "WallOfLove",
       applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Testimonial Management",
       operatingSystem: "Web",
       url: "https://walloflove.eazyweb.nc",
       description:
         "Collect, manage, and showcase stunning customer testimonials. Embed a beautiful wall of love on your site in one line of code.",
+      featureList:
+        "Testimonial collection forms, Embeddable wall widget, Social proof display, Video testimonials, Custom branding, Analytics dashboard",
       offers: {
         "@type": "AggregateOffer",
         lowPrice: "0",

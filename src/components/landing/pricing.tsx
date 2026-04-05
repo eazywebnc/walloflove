@@ -128,6 +128,9 @@ export function Pricing() {
               "relative w-14 h-7 rounded-full transition-colors duration-300",
               yearly ? "bg-gradient-to-r from-indigo-600 to-purple-600" : "bg-white/10"
             )}
+            role="switch"
+            aria-checked={yearly}
+            aria-label="Toggle yearly billing"
           >
             <motion.div
               animate={{ x: yearly ? 28 : 4 }}

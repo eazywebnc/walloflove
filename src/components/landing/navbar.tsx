@@ -78,6 +78,7 @@ export function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-white/60 hover:text-white p-2"
+          aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>

@@ -1,0 +1,9 @@
+# WallOfLove - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /auth
+Disallow: /api
+Allow: /api/og
+
+Sitemap: https://walloflove.eazyweb.nc/sitemap.xml
