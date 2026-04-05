@@ -7,7 +7,6 @@ const links = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
   { label: "Contact", href: "mailto:contact@eazyweb.nc" },
-  { label: "Blog", href: "/blog" },
 ];
 
 export function Footer() {
