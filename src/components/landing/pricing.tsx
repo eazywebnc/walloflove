@@ -47,9 +47,9 @@ const plans = [
     cta: "Start Pro Trial",
     ctaVariant: "default" as const,
     highlighted: true,
-    gradient: "from-indigo-600 to-purple-600",
-    borderClass: "border-indigo-500/50",
-    bgClass: "bg-gradient-to-b from-indigo-950/50 to-purple-950/30",
+    gradient: "from-rose-600 to-pink-600",
+    borderClass: "border-rose-500/50",
+    bgClass: "bg-gradient-to-b from-rose-950/50 to-pink-950/30",
   },
   {
     name: "Business",
@@ -84,7 +84,7 @@ export function Pricing() {
     <section className="relative py-32 px-4 overflow-hidden" id="pricing">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-indigo-600/6 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-rose-600/6 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-5xl mx-auto">
@@ -102,7 +102,7 @@ export function Pricing() {
           </div>
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-4">
             Start free,{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
               scale when ready
             </span>
           </h2>
@@ -126,7 +126,7 @@ export function Pricing() {
             onClick={() => setYearly(!yearly)}
             className={cn(
               "relative w-14 h-7 rounded-full transition-colors duration-300",
-              yearly ? "bg-gradient-to-r from-indigo-600 to-purple-600" : "bg-white/10"
+              yearly ? "bg-gradient-to-r from-rose-600 to-pink-600" : "bg-white/10"
             )}
             role="switch"
             aria-checked={yearly}
@@ -170,18 +170,18 @@ export function Pricing() {
                 "relative flex flex-col rounded-2xl border p-6 transition-all duration-300",
                 plan.bgClass,
                 plan.borderClass,
-                plan.highlighted && "shadow-2xl shadow-indigo-500/20 scale-[1.02]"
+                plan.highlighted && "shadow-2xl shadow-rose-500/20 scale-[1.02]"
               )}
             >
               {/* Gradient border glow for highlighted */}
               {plan.highlighted && (
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-indigo-500/20 to-purple-500/10 pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-rose-500/20 to-pink-500/10 pointer-events-none" />
               )}
 
               {/* Popular badge */}
               {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-1.5 px-4 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-bold shadow-lg shadow-indigo-500/40">
+                  <div className="flex items-center gap-1.5 px-4 py-1 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white text-xs font-bold shadow-lg shadow-rose-500/40">
                     <Sparkles className="w-3 h-3" />
                     {plan.badge}
                   </div>
@@ -227,7 +227,7 @@ export function Pricing() {
                         className={cn(
                           "mt-0.5 w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0",
                           plan.highlighted
-                            ? "bg-gradient-to-br from-indigo-500 to-purple-500"
+                            ? "bg-gradient-to-br from-rose-500 to-pink-500"
                             : "bg-white/10"
                         )}
                       >
@@ -244,7 +244,7 @@ export function Pricing() {
                   className={cn(
                     "w-full h-12 rounded-xl font-semibold group transition-all duration-300",
                     plan.highlighted
-                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white border-0 shadow-lg shadow-indigo-500/25"
+                      ? "bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white border-0 shadow-lg shadow-rose-500/25"
                       : "bg-white/5 border border-white/15 text-white hover:bg-white/10 hover:border-white/25"
                   )}
                 >

@@ -153,7 +153,7 @@ export function DashboardPreview() {
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-xs font-bold text-white/70">Recent Testimonials</h3>
                   <div className="flex items-center gap-1.5">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">All</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-rose-500/20 text-rose-300 border border-rose-500/30">All</span>
                     <span className="px-2 py-0.5 rounded text-[10px] font-medium text-white/30 hover:text-white/50 cursor-pointer">Text</span>
                     <span className="px-2 py-0.5 rounded text-[10px] font-medium text-white/30 hover:text-white/50 cursor-pointer">Video</span>
                   </div>

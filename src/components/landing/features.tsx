@@ -224,7 +224,7 @@ export function Features() {
           </div>
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-4">
             Built for growth,{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
               not complexity
             </span>
           </h2>
