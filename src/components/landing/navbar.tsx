@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Star, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -63,14 +64,16 @@ export function Navbar() {
             variant="ghost"
             size="sm"
             className="text-white/60 hover:text-white hover:bg-white/5 h-9 px-4 rounded-xl"
+            asChild
           >
-            Sign in
+            <Link href="/auth/login">Sign in</Link>
           </Button>
           <Button
             size="sm"
             className="h-9 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 border-0 text-white font-semibold shadow-lg shadow-indigo-500/25"
+            asChild
           >
-            Start Free
+            <Link href="/auth/login?mode=signup">Start Free</Link>
           </Button>
         </div>
 
@@ -107,11 +110,12 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 className="w-full justify-center text-white/60 hover:text-white hover:bg-white/5 rounded-xl"
+                asChild
               >
-                Sign in
+                <Link href="/auth/login">Sign in</Link>
               </Button>
-              <Button className="w-full justify-center bg-gradient-to-r from-indigo-600 to-purple-600 border-0 text-white rounded-xl">
-                Start Free
+              <Button className="w-full justify-center bg-gradient-to-r from-indigo-600 to-purple-600 border-0 text-white rounded-xl" asChild>
+                <Link href="/auth/login?mode=signup">Start Free</Link>
               </Button>
             </div>
           </div>

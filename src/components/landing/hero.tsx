@@ -163,7 +163,7 @@ export function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.05] mb-6"
         >
           <span className="text-white">Turn Happy Customers</span>
-          <br />
+          {' '}<br />
           <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Into Your Best Marketing
           </span>
