@@ -66,9 +66,9 @@ function Card({ card }: { card: TestimonialCard }) {
   const heightMap = { sm: "min-h-[140px]", md: "min-h-[190px]", lg: "min-h-[240px]" };
   return (
     <div
-      className={`${heightMap[card.size]} rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 flex flex-col gap-3 hover:border-indigo-500/30 hover:bg-white/[0.06] transition-all duration-500 group`}
+      className={`${heightMap[card.size]} rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 flex flex-col gap-3 hover:border-rose-500/30 hover:bg-white/[0.06] transition-all duration-500 group`}
     >
-      <Quote className="h-4 w-4 text-indigo-400/40 group-hover:text-indigo-400/70 transition-colors shrink-0" />
+      <Quote className="h-4 w-4 text-rose-400/40 group-hover:text-rose-400/70 transition-colors shrink-0" />
       <p className="text-sm text-zinc-300 leading-relaxed flex-1">{card.text}</p>
       <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/[0.06]">
         <div>
@@ -162,18 +162,38 @@ export function Hero() {
       ref={sectionRef}
       className="relative min-h-screen overflow-hidden bg-zinc-950 pt-24 pb-16 lg:pt-32 lg:pb-24"
     >
+      {/* Noise/grain texture overlay */}
+      <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.035]">
+        <svg width="100%" height="100%">
+          <filter id="hero-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#hero-noise)" />
+        </svg>
+      </div>
+
+      {/* Radial dot pattern */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] opacity-[0.12]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(244,114,182,0.35) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+
       {/* Background gradient blurs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-indigo-600/10 blur-[160px]" />
-        <div className="absolute top-1/2 left-1/3 h-[400px] w-[400px] rounded-full bg-purple-600/[0.08] blur-[120px]" />
-        <div className="absolute -bottom-20 right-0 h-[500px] w-[500px] rounded-full bg-pink-600/[0.08] blur-[140px]" />
+        <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-rose-600/10 blur-[160px]" />
+        <div className="absolute top-1/2 left-1/3 h-[400px] w-[400px] rounded-full bg-pink-600/[0.08] blur-[120px]" />
+        <div className="absolute -bottom-20 right-0 h-[500px] w-[500px] rounded-full bg-fuchsia-600/[0.08] blur-[140px]" />
       </div>
 
       {/* Glowing heart accent behind the wall */}
       <div className="pointer-events-none absolute right-[10%] top-1/2 -translate-y-1/2 z-0">
-        <Heart className="h-[500px] w-[500px] text-indigo-500/[0.04] fill-indigo-500/[0.02]" strokeWidth={0.5} />
+        <Heart className="h-[500px] w-[500px] text-rose-500/[0.04] fill-rose-500/[0.02]" strokeWidth={0.5} />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-60 w-60 rounded-full bg-indigo-500/[0.06] blur-[80px]" />
+          <div className="h-60 w-60 rounded-full bg-rose-500/[0.06] blur-[80px]" />
         </div>
       </div>
 
@@ -186,9 +206,9 @@ export function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/[0.08] px-4 py-1.5 mb-8">
-                <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
-                <span className="text-xs font-medium text-indigo-300 tracking-wide">
+              <div className="inline-flex items-center gap-2 rounded-full border border-rose-500/20 bg-rose-500/[0.08] px-4 py-1.5 mb-8">
+                <Sparkles className="h-3.5 w-3.5 text-rose-400" />
+                <span className="text-xs font-medium text-rose-300 tracking-wide">
                   Social proof that converts
                 </span>
               </div>
@@ -196,12 +216,13 @@ export function Hero() {
 
             <motion.h1
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]"
+              style={{ fontFamily: "var(--font-display), serif" }}
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             >
               Turn your{" "}
-              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-fuchsia-400 bg-clip-text text-transparent">
                 happiest customers
               </span>{" "}
               into your best marketing
@@ -225,7 +246,7 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-500/25 px-8 h-12 text-base font-semibold rounded-xl"
+                className="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white shadow-lg shadow-rose-500/25 px-8 h-12 text-base font-semibold rounded-xl"
               >
                 Start for free
                 <ArrowRight className="ml-2 h-4 w-4" />

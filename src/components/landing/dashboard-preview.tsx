@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { Star, Heart, ThumbsUp, Video, MoreHorizontal, TrendingUp, Users, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -61,6 +62,8 @@ export function DashboardPreview() {
 
   const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [4, 0, -2]);
+  const yImage = useTransform(scrollYProgress, [0, 1], [60, -30]);
+  const rotateXImage = useTransform(scrollYProgress, [0, 0.5, 1], [6, 0, -3]);
 
   return (
     <section ref={ref} className="relative py-8 px-4">
@@ -169,7 +172,48 @@ export function DashboardPreview() {
         </div>
 
         {/* Reflection glow */}
-        <div className="absolute -bottom-8 left-[10%] right-[10%] h-16 bg-indigo-500/10 blur-3xl rounded-full" />
+        <div className="absolute -bottom-8 left-[10%] right-[10%] h-16 bg-rose-500/10 blur-3xl rounded-full" />
+      </motion.div>
+
+      {/* Actual dashboard screenshot with 3D perspective */}
+      <motion.div
+        style={{ y: yImage, rotateX: rotateXImage, perspective: 1400 }}
+        className="max-w-5xl mx-auto mt-16"
+      >
+        <div className="relative rounded-2xl border border-white/15 bg-[#111111] shadow-2xl shadow-black/60 overflow-hidden">
+          {/* Browser title bar */}
+          <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-[#0d0d0d]">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500/80" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+            </div>
+            <div className="flex-1 flex justify-center">
+              <div className="flex items-center gap-2 px-4 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] text-white/40 font-mono">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                app.walloflove.io/dashboard
+              </div>
+            </div>
+            <MoreHorizontal className="w-4 h-4 text-white/30" />
+          </div>
+
+          {/* Dashboard image */}
+          <div className="relative">
+            <Image
+              src="/images/dashboard.webp"
+              alt="WallOfLove dashboard — manage testimonials, analytics, and walls"
+              width={1920}
+              height={1080}
+              className="w-full h-auto"
+              priority={false}
+            />
+            {/* Gradient overlay at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#111111] to-transparent pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Reflection glow */}
+        <div className="absolute -bottom-8 left-[10%] right-[10%] h-16 bg-pink-500/10 blur-3xl rounded-full" />
       </motion.div>
     </section>
   );
