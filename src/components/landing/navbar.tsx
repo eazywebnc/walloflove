@@ -60,21 +60,12 @@ export function Navbar() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-white/60 hover:text-white hover:bg-white/5 h-9 px-4 rounded-xl"
-            asChild
-          >
-            <Link href="/auth/login">Sign in</Link>
-          </Button>
-          <Button
-            size="sm"
-            className="h-9 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 border-0 text-white font-semibold shadow-lg shadow-indigo-500/25"
-            asChild
-          >
-            <Link href="/auth/login?mode=signup">Start Free</Link>
-          </Button>
+          <Link href="/auth/login" className="inline-flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 h-9 px-4 rounded-xl text-sm font-medium transition-colors">
+            Sign in
+          </Link>
+          <Link href="/auth/login?mode=signup" className="inline-flex items-center justify-center h-9 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 border-0 text-white text-sm font-semibold shadow-lg shadow-indigo-500/25 transition-all">
+            Start Free
+          </Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -107,16 +98,12 @@ export function Navbar() {
               </a>
             ))}
             <div className="pt-3 flex flex-col gap-2">
-              <Button
-                variant="ghost"
-                className="w-full justify-center text-white/60 hover:text-white hover:bg-white/5 rounded-xl"
-                asChild
-              >
-                <Link href="/auth/login">Sign in</Link>
-              </Button>
-              <Button className="w-full justify-center bg-gradient-to-r from-indigo-600 to-purple-600 border-0 text-white rounded-xl" asChild>
-                <Link href="/auth/login?mode=signup">Start Free</Link>
-              </Button>
+              <Link href="/auth/login" className="w-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/5 rounded-xl py-2 text-sm font-medium transition-colors">
+                Sign in
+              </Link>
+              <Link href="/auth/login?mode=signup" className="w-full flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-600 border-0 text-white rounded-xl py-2 text-sm font-semibold transition-all">
+                Start Free
+              </Link>
             </div>
           </div>
         </motion.div>

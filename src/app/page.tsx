@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
+import { DashboardPreview } from "@/components/landing/dashboard-preview";
 import { Features } from "@/components/landing/features";
+import { WallPreview } from "@/components/landing/wall-preview";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Pricing } from "@/components/landing/pricing";
 import { CTA } from "@/components/landing/cta";
@@ -12,9 +14,11 @@ export default function LandingPage() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <DashboardPreview />
         <section id="features">
           <Features />
         </section>
+        <WallPreview />
         <section id="how-it-works">
           <HowItWorks />
         </section>
