@@ -33,6 +33,15 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: "/auth/signup",
+        destination: "/auth/login",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
