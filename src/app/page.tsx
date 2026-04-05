@@ -7,10 +7,12 @@ import { HowItWorks } from "@/components/landing/how-it-works";
 import { Pricing } from "@/components/landing/pricing";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
+import { AnimatedMeshBg } from "@/components/landing/animated-bg";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
+    <div className="flex flex-col min-h-screen bg-[#050505] relative">
+      <AnimatedMeshBg />
       <Navbar />
       <main className="flex-1">
         <Hero />

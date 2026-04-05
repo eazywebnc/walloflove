@@ -217,15 +217,43 @@ export function Hero() {
             <motion.h1
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]"
               style={{ fontFamily: "var(--font-display), serif" }}
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Turn your{" "}
-              <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-fuchsia-400 bg-clip-text text-transparent">
-                happiest customers
-              </span>{" "}
-              into your best marketing
+              {"Turn your ".split("").map((char, i) => (
+                <motion.span
+                  key={`a-${i}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 + i * 0.02 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+              <br />
+              {"happiest customers".split("").map((char, i) => (
+                <motion.span
+                  key={`b-${i}`}
+                  className="bg-gradient-to-r from-rose-400 via-pink-400 to-fuchsia-400 bg-clip-text text-transparent"
+                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.35, delay: 0.3 + i * 0.025 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+              <br />
+              {"into your best marketing".split("").map((char, i) => (
+                <motion.span
+                  key={`c-${i}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.8 + i * 0.02 }}
+                >
+                  {char}
+                </motion.span>
+              ))}
             </motion.h1>
 
             <motion.p
