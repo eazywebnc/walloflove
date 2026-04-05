@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { Heart, Star, ArrowRight, Quote, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -306,6 +307,33 @@ export function Hero() {
             </motion.div>
           </div>
 
+          {/* Dashboard Preview */}
+          <motion.div
+            className="w-full lg:hidden mt-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          >
+            <div
+              className="relative mx-auto max-w-2xl"
+              style={{ perspective: "1200px" }}
+            >
+              <div
+                className="relative transform transition-transform duration-700 hover:rotate-x-0"
+                style={{ transform: "rotateX(4deg) rotateY(-2deg)" }}
+              >
+                <Image
+                  src="/images/dashboard.webp"
+                  alt="WallOfLove Dashboard"
+                  width={1200}
+                  height={675}
+                  className="rounded-2xl border border-white/10 shadow-2xl shadow-black/50"
+                  priority
+                />
+              </div>
+            </div>
+          </motion.div>
+
           {/* RIGHT: Living Testimonial Masonry Wall */}
           <motion.div
             className="flex-1 lg:max-w-[560px]"
@@ -337,6 +365,35 @@ export function Hero() {
             </div>
           </motion.div>
         </div>
+
+        {/* Dashboard Preview - Full Width */}
+        <motion.div
+          className="hidden lg:block mt-20"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        >
+          <div
+            className="relative mx-auto max-w-5xl"
+            style={{ perspective: "1200px" }}
+          >
+            <div
+              className="relative transform transition-transform duration-700 hover:scale-[1.01]"
+              style={{ transform: "rotateX(4deg) rotateY(-1deg)" }}
+            >
+              <Image
+                src="/images/dashboard.webp"
+                alt="WallOfLove Dashboard"
+                width={1200}
+                height={675}
+                className="rounded-2xl border border-white/10 shadow-2xl shadow-black/50"
+                priority
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+            </div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-rose-500/5 via-pink-500/5 to-fuchsia-500/5 rounded-3xl blur-xl -z-10" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
