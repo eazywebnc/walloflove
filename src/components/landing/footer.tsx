@@ -2,6 +2,7 @@
 
 import { Heart, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EcosystemFooter } from "./ecosystem-footer";
 
 const links = [
   { label: "Privacy", href: "/privacy" },
@@ -55,6 +56,8 @@ export function Footer() {
             </a>
           </div>
         </div>
+
+        <EcosystemFooter />
 
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-white/[0.05] text-center">
