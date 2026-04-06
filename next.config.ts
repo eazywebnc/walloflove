@@ -34,6 +34,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   images: { unoptimized: true },
   poweredByHeader: false,
+  async headers() {
+    return [{ source: "/(.*)", headers: securityHeaders }];
+  },
 };
 
 export default nextConfig;
